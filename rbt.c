@@ -65,6 +65,57 @@ void insertFix(Node*z)
 {
 Node*y;
 while(z->parent->color==RED)
+{
+if(z->parent==z->parent->parent->left
+
+y=z->parent->parent->right;
+if(y->color==RED)
+{
+z->parent->color=BLACK;
+y->color=BLACK;
+z->parent->parent->color=RED;
+z=z->parent->parent;
+}
+else
+{
+if(z==z->parent->right)
+{
+z=z->parent;
+leftRotate(z);
+}
+z->parent->color=BLACk;
+z->parent->parent->color=RED;
+rightRotate(z->parent->parent);
+}}
+else
+{
+y=z->parent->parent->left;
+if(y->color==RED)
+{
+z->parent->color=BLACK;
+y->color=BLACK;
+z->parent->parent->color=RED;
+x==z->parent->parent;
+}
+else
+{
+if(z==z->parent->left)
+{
+z=z->parent;
+rightRotate(z);
+}
+z->parent->color=BLACK;
+z->parent->parent->color=RED;
+leftRotate(z->parent->parent);
+}}}
+root->color=BLACK;
+}
+void insert(int data)
+{
+Node*z=createNode(data);
+Node*y=NIL;
+Node*x=root;
+
 
 
 
